@@ -8,9 +8,15 @@ const binaries = [
     "name": "rimshot",
     "description": "Simply plays a rimshot sound.",
     "category": "useless"
+  },
+  {
+    "name": "e",
+    "description": "Quick shortcut to an editor.",
+    "category": "productivity"
   }
 ]
 const binariesContainer = document.querySelector(".binaries__container")
+const categories = document.querySelectorAll(".superior__item")
 
 const listBinaries = () => {
   binaries.forEach(binary => {
@@ -27,3 +33,44 @@ const listBinaries = () => {
 }
 
 listBinaries()
+
+categories.forEach(category => {
+  const categoryName = category.textContent.toLowerCase()
+
+  category.addEventListener("click", () => filterByCategory(categoryName))
+})
+
+const filterByCategory = (category) => {
+  const binaries = document.querySelectorAll(".binaries__item")
+
+  binaries.forEach(binary => {
+    const binaryCategory = binary.querySelector(".binary-category").textContent.toLowerCase()
+
+    binary.style.display = category.includes(binaryCategory) || category == "all" ? "block" : "none"
+
+    highlightCategoryElement(category)
+  });
+}
+
+const highlightCategoryElement = (categoryToHighlight) => {
+  const categories = document.querySelectorAll(".superior__item")
+
+  categories.forEach(category => {
+    unhighlightElement(category)
+
+    const categoryName = category.textContent.toLowerCase()
+    
+    if (categoryName == categoryToHighlight) {
+      highlightElement(category)
+    }
+  })
+}
+ const highlightElement = (category) => {
+  category.classList.remove("badge", "badge-outline", "badge-neutral")
+  category.classList.add("badge", "badge-outline")
+ }
+
+ const unhighlightElement = (category) => {
+  category.classList.remove("badge", "badge-outline", "badge-neutral")
+  category.classList.add("badge", "badge-neutral", "badge-outline")
+ }
