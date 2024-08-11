@@ -1,0 +1,14 @@
+.container__category_section {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.container__binaries_section {
+  display: flex;
+  justify-content: center;
+}
+
+.container__binaries_section-wrapper li {
+  margin: 10px 0;
+}

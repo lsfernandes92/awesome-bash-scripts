@@ -15,7 +15,7 @@ const binariesJson = [
     "category": "productivity"
   }
 ]
-const binariesContainer = document.querySelector(".binaries__container")
+const binariesContainer = document.querySelector(".container__binaries_section-wrapper")
 const categoriesElements = document.querySelectorAll(".superior__item")
 const binariesElements = document.querySelectorAll(".binaries__item")
 
