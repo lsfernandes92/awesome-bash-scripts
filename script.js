@@ -1,4 +1,4 @@
-const binaries = [
+const binariesJson = [
   {
     "name": "add-bins",
     "description": "Make individual bin executable system-wide.",
@@ -16,16 +16,33 @@ const binaries = [
   }
 ]
 const binariesContainer = document.querySelector(".binaries__container")
-const categories = document.querySelectorAll(".superior__item")
+const categoriesElements = document.querySelectorAll(".superior__item")
+const binariesElements = document.querySelectorAll(".binaries__item")
 
 const listBinaries = () => {
-  binaries.forEach(binary => {
+  const dialogHTML = `
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <div class="binary-card p-8 mockup-code">
+          <pre><code>Testing</code></pre>
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+  `
+  document.body.insertAdjacentHTML('beforeend', dialogHTML);
+  binariesJson.forEach(obj => {
     binariesContainer.innerHTML += `
       <li class="binaries__item mockup-code flex flex-row">
         <div class="binary-card p-8">
-          <pre data-prefix="$"><code class="binary-name">./${binary.name}</code></pre>
-          <pre data-prefix=">" class="text-success"><code class="binary-description">${binary.description}</code></pre>
-          <pre data-prefix=">" class="text-warning"><code class="binary-category">${binary.category}</code></pre>
+          <pre data-prefix="$"><code class="binary-name"><a href="#" name="${obj.name}" onclick="my_modal_1.showModal()">./${obj.name}</a></code></pre>
+          <pre data-prefix=">" class="text-success"><code class="binary-description">${obj.description}</code></pre>
+          <pre data-prefix=">" class="text-warning"><code class="binary-category">${obj.category}</code></pre>
         </div>
       </li>
     `
@@ -34,19 +51,19 @@ const listBinaries = () => {
 
 listBinaries()
 
-categories.forEach(category => {
-  const categoryName = category.textContent.toLowerCase()
+categoriesElements.forEach(element => {
+  const categoryName = element.textContent.toLowerCase()
 
-  category.addEventListener("click", () => filterByCategory(categoryName))
+  element.addEventListener("click", () => filterByCategory(categoryName))
 })
 
 const filterByCategory = (category) => {
   const binaries = document.querySelectorAll(".binaries__item")
 
-  binaries.forEach(binary => {
-    const binaryCategory = binary.querySelector(".binary-category").textContent.toLowerCase()
+  binaries.forEach(element => {
+    const binaryCategory = element.querySelector(".binary-category").textContent.toLowerCase()
 
-    binary.style.display = category.includes(binaryCategory) || category == "all" ? "block" : "none"
+    element.style.display = category.includes(binaryCategory) || category == "all" ? "block" : "none"
 
     highlightCategoryElement(category)
   });
@@ -55,13 +72,13 @@ const filterByCategory = (category) => {
 const highlightCategoryElement = (categoryToHighlight) => {
   const categories = document.querySelectorAll(".superior__item")
 
-  categories.forEach(category => {
-    unhighlightElement(category)
+  categories.forEach(element => {
+    unhighlightElement(element)
 
-    const categoryName = category.textContent.toLowerCase()
+    const categoryName = element.textContent.toLowerCase()
     
     if (categoryName == categoryToHighlight) {
-      highlightElement(category)
+      highlightElement(element)
     }
   })
 }
