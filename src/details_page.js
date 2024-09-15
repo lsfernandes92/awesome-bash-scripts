@@ -16,7 +16,7 @@ binCategoryElement.innerHTML = category
 const showScriptContent = (binName) => {
   const scriptContent = document.querySelector(".script_content")
 
-  fetch(`bins/${binName}`)
+  fetch(`../public/bins/${binName}`)
     .then(response => response.text())
     .then(data => {
       scriptContent.innerHTML = `
