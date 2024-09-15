@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+#
+# Make individual bin executable system-wide.
+#
+# This means that the given binaries will get added to your `$PATH` and be made
+# available everywhere.
+# By doing this, the binary will be added as a "shim" in your rbenv directory,
+# so **you need to have rbenv installed before using this.**
+#
+# USAGE:
+#
+#   $ ./add-bins
+RUBY_VERSION = "#{ENV['RBENV_VERSION']}"
+SHIM_DIR = "#{ENV['HOME']}/.rbenv/versions/#{RUBY_VERSION}/"
+DOTFILES_BIN_DIR = "#{ENV['HOME']}/.dotfiles/bin"
+
+def append_puts_message
+  puts "\n\n≫"
+  yield
+  puts "≫\n\n"
+end
+
+def make_bin_executable(bin)
+  append_puts_message { puts "💬 Please enter the your sudo password in order to make the '#{bin}' executable" }
+  spawn "cd #{DOTFILES_BIN_DIR}"
+  `sudo chmod +x #{bin}`
+  puts "≫ '#{bin}' is now chmod as exutable!"
+end
+
+def symlink_bin(bin)
+  spawn "cd #{SHIM_DIR}/bin && sudo ln -s #{DOTFILES_BIN_DIR}/#{bin} '#{bin}'"
+end
+
+append_puts_message { puts '💬 Which binaries would you like to add? Please list them, separated by a single space.' }
+bin_list = gets.chomp
+
+bin_list.split(' ').each do |bin|
+  make_bin_executable(bin)
+  symlink_bin(bin)
+  spawn 'rbenv rehash'
+  puts '⚠️ Now please reload the terminal.'
+end

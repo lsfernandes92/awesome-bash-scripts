@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.container__details_section-wrapper-first-line {
+  display: flex;
+  align-items: center;
+}
+
+.container__details_section-wrapper-first-line a {
+  margin-right: 10px;
+}

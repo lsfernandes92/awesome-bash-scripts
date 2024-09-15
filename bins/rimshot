@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+#
+# Simply plays a rimshot sound.
+#
+# USAGE:
+#
+#   $ ./rimshot
+#   # => plays a rimshot sound
+DOWNLOADS_DIRECTORY = "$HOME/Downloads"
+SOUND_FILE_NAME = 'rimshot.mp3'
+
+def previously_downloaded_mp3?
+  !`cd #{DOWNLOADS_DIRECTORY} && find . -name #{SOUND_FILE_NAME}`.strip.empty?
+end
+
+unless previously_downloaded_mp3?
+  spawn "curl https://instantrimshot.com/audio/rimshot.mp3 -o #{DOWNLOADS_DIRECTORY}/#{SOUND_FILE_NAME} 2>/dev/null"
+end
+
+def brew_installed?
+  !`which brew`.empty?
+end
+
+def mpg123_installed?
+  !`brew list | grep mpg123`.strip.empty?
+end
+
+if RbConfig::CONFIG['host_os'] =~ /darwin/
+  unless brew_installed?
+    puts '⚠️ No Homebrew found!'
+  end
+
+  spawn "brew install mpg123" unless mpg123_installed?
+  spawn "cd #{DOWNLOADS_DIRECTORY} && mpg123 #{SOUND_FILE_NAME} 2>/dev/null"
+end
