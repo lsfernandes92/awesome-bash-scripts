@@ -1,4 +1,4 @@
-const binariesJson = [
+const binsJson = [
   {
     "name": "add-bins",
     "description": "Make individual bin executable system-wide.",
@@ -15,11 +15,10 @@ const binariesJson = [
     "category": "productivity"
   }
 ]
-const binariesContainer = document.querySelector(".container__binaries_section-wrapper")
+const binsContainer = document.querySelector(".container__bins_section-wrapper")
 const categoriesElements = document.querySelectorAll(".superior__item")
-const binariesElements = document.querySelectorAll(".binaries__item")
 
-const goToBinaryScriptPage = (binObject) => {
+const goToBinScriptPage = (binObject) => {
   const bin = JSON.parse(decodeURIComponent(binObject));
   
   const params = new URLSearchParams({
@@ -30,14 +29,14 @@ const goToBinaryScriptPage = (binObject) => {
   window.location.href = `details_page.html?${params.toString()}`;
 } 
 
-const listBinaries = () => {
-  binariesJson.forEach(obj => {
+const listBins = () => {
+  binsJson.forEach(obj => {
     const serializedObj = encodeURIComponent(JSON.stringify(obj));
 
-    binariesContainer.innerHTML += `
-      <li class="binaries__item mockup-code flex flex-row">
+    binsContainer.innerHTML += `
+      <li class="bins__item mockup-code flex flex-row">
         <div class="binary-card p-8">
-          <pre data-prefix="$"><code class="binary-name"><a href="#" name="${obj.name}" onclick="goToBinaryScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
+          <pre data-prefix="$"><code class="binary-name"><a href="#" name="${obj.name}" onclick="goToBinScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
           <pre data-prefix=">" class="text-success"><code class="binary-description">${obj.description}</code></pre>
           <pre data-prefix=">" class="text-warning"><code class="binary-category">${obj.category}</code></pre>
         </div>
@@ -46,7 +45,7 @@ const listBinaries = () => {
   })  
 }
 
-listBinaries()
+listBins()
 
 categoriesElements.forEach(element => {
   const categoryName = element.textContent.toLowerCase()
@@ -55,12 +54,12 @@ categoriesElements.forEach(element => {
 })
 
 const filterByCategory = (category) => {
-  const binaries = document.querySelectorAll(".binaries__item")
+  const bins = document.querySelectorAll(".bins__item")
 
-  binaries.forEach(element => {
-    const binaryCategory = element.querySelector(".binary-category").textContent.toLowerCase()
+  bins.forEach(element => {
+    const binCategory = element.querySelector(".binary-category").textContent.toLowerCase()
 
-    element.style.display = category.includes(binaryCategory) || category == "all" ? "block" : "none"
+    element.style.display = category.includes(binCategory) || category == "all" ? "block" : "none"
 
     highlightCategoryElement(category)
   });
