@@ -82,9 +82,11 @@ const highlightCategoryElement = (categoryToHighlight) => {
  const highlightElement = (category) => {
   category.classList.remove("badge", "badge-outline", "badge-neutral")
   category.classList.add("badge", "badge-outline")
+  category.style.color = "#FFBE00"
  }
 
  const unhighlightElement = (category) => {
   category.classList.remove("badge", "badge-outline", "badge-neutral")
   category.classList.add("badge", "badge-neutral", "badge-outline")
+  category.style.removeProperty("color");
  }
