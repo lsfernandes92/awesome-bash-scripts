@@ -6,6 +6,9 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://kit.fontawesome.com/d7ee96baff.js" crossorigin="anonymous"></script>
   <link rel="icon" href="public/images/terminal-solid.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-ruby.min.js"></script>
   <title>Awesome Bash Scripts</title>
   <script src="./details_page.js" defer></script>
   <link rel="stylesheet" href="./details_page.css">
@@ -15,7 +18,7 @@
     <section class="container__details_section">
       <div class="container__details_section_wrapper">
         <div class="container__details_section_wrapper-first-line">
-          <a href="../public/index.html" class="fa-solid fa-angle-left" style="font-size: 48px;"></a>
+          <a href="../public/index.html" class="fa-solid fa-angle-left" style="font-size: 48px;" /></a>
           <h2 class="bin_name"></h2>
         </div>
 
@@ -29,7 +32,9 @@
         <div class="divider"><i class="fa-solid fa-terminal"></i></div>
 
         <div class="container__details_section_wrapper-script-content">
-          <p class="script_content"></p>
+          <pre class="rounded-lg border border-neutral p-4 bg-base-200">
+            <code class="language-ruby"></code>
+          </pre>
         </div>
       </div>
     </section>

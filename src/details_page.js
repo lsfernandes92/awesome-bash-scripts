@@ -14,14 +14,13 @@ binDescriptionElement.innerHTML = description
 binCategoryElement.innerHTML = category
 
 const showScriptContent = (binName) => {
-  const scriptContent = document.querySelector(".script_content")
+  const scriptContent = document.querySelector(".language-ruby")
 
   fetch(`../public/bins/${binName}`)
     .then(response => response.text())
     .then(data => {
-      scriptContent.innerHTML = `
-          <pre data-prefix="~"><code>${data}</code></pre>
-      `
+      scriptContent.innerHTML = "\n" + data
+      Prism.highlightElement(scriptContent);
     })
     .catch(error => console.error("Error fetching the file:", error))
 }

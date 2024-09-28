@@ -27,3 +27,23 @@
 .container__details_section_wrapper-description .bin_description {
   margin-bottom: 10px;
 }
+
+.container__details_section_wrapper-script-content {
+  width: 900px;
+  height: 750px;
+  margin-top: 30px;
+}
+
+.container__details_section_wrapper-script-content pre {
+  padding: 10px;
+  border: 2px solid #00A96E;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.container__details_section_wrapper-script-content .language-ruby {
+  background-color: #2A323C;
+  text-shadow: none;
+  font-family: monospace;
+  color: inherit;
+}
