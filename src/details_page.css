@@ -28,6 +28,12 @@
   margin-bottom: 10px;
 }
 
+.container__details_section_wrapper-description .bin_category {
+  font-size: 12px;
+  padding: 15px 15px;
+  transition: transform 0.3s ease;
+}
+
 .container__details_section_wrapper-script-content {
   width: 900px;
   height: 750px;

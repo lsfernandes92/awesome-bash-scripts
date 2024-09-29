@@ -12,3 +12,9 @@
 .container__bins_section-wrapper li {
   margin: 10px 0;
 }
+
+.container__category_section-wrapper .superior__item {
+  font-size: 12px;
+  padding: 15px 15px;
+  transition: transform 0.3s ease;
+}
