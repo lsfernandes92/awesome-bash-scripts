@@ -1,3 +1,5 @@
+import { prependHeaderToPage } from './header.js';
+
 const params = new URLSearchParams(window.location.search);
 const q = params.get("q");
 const description = params.get("description");
@@ -25,4 +27,5 @@ const showScriptContent = (binName) => {
     .catch(error => console.error("Error fetching the file:", error))
 }
 
+prependHeaderToPage()
 showScriptContent(q)

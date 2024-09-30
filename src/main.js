@@ -1,3 +1,5 @@
+import { prependHeaderToPage } from './header.js';
+
 const binsJson = [
   {
     "name": "add-bins",
@@ -18,7 +20,7 @@ const binsJson = [
 const binsContainer = document.querySelector(".container__bins_section-wrapper")
 const categoriesElements = document.querySelectorAll(".superior__item")
 
-const goToBinScriptPage = (binObject) => {
+export const goToBinScriptPage = (binObject) => {
   const bin = JSON.parse(decodeURIComponent(binObject));
   
   const params = new URLSearchParams({
@@ -27,7 +29,8 @@ const goToBinScriptPage = (binObject) => {
      category: bin.category
   });
   window.location.href = `../src/details_page.html?${params.toString()}`;
-} 
+}
+window.goToBinScriptPage = goToBinScriptPage;
 
 const listBins = () => {
   binsJson.forEach(obj => {
@@ -36,16 +39,14 @@ const listBins = () => {
     binsContainer.innerHTML += `
       <li class="bins__item mockup-code flex flex-row">
         <div class="binary-card p-8">
-          <pre data-prefix="$"><code class="binary-name"><a href="#" name="${obj.name}" onclick="goToBinScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
+          <pre data-prefix="$"><code class="binary-name ${obj.name}"><a href="#" name="${obj.name}" onclick="goToBinScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
           <pre data-prefix=">" class="text-success"><code class="binary-description">${obj.description}</code></pre>
           <pre data-prefix=">" class="text-warning"><code class="binary-category">${obj.category}</code></pre>
         </div>
       </li>
     `
-  })  
+  })
 }
-
-listBins()
 
 categoriesElements.forEach(element => {
   const categoryName = element.textContent.toLowerCase()
@@ -78,14 +79,18 @@ const highlightCategoryElement = (categoryToHighlight) => {
     }
   })
 }
- const highlightElement = (category) => {
+
+const highlightElement = (category) => {
   category.classList.remove("badge", "badge-outline", "badge-neutral")
   category.classList.add("badge", "badge-outline")
   category.style.color = "#FFBE00"
- }
+}
 
- const unhighlightElement = (category) => {
+const unhighlightElement = (category) => {
   category.classList.remove("badge", "badge-outline", "badge-neutral")
   category.classList.add("badge", "badge-neutral", "badge-outline")
-  category.style.removeProperty("color");
- }
+  category.style.removeProperty("color")
+}
+
+prependHeaderToPage()
+listBins()
