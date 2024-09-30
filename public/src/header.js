@@ -8,7 +8,7 @@ export const prependHeaderToPage = () => {
   navbarElement.classList.add("navbar", "bg-base-100")
   navbarCenterElement.classList.add("navbar-center")
   btnGhostElement.classList.add("btn", "btn-ghost", "text-xl")
-  logoImgElement.src = "../public/images/logo.png"
+  logoImgElement.src = "/images/logo.png"
   logoImgElement.alt = "Awesome bash scripts logo"
   awesomeBashScriptsParagraphElement.textContent = "Awesome Bash Scripts"
 

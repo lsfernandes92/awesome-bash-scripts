@@ -28,7 +28,7 @@ export const goToBinScriptPage = (binObject) => {
      description: bin.description,
      category: bin.category
   });
-  window.location.href = `../src/details_page.html?${params.toString()}`;
+  window.location.href = `/src/details_page.html?${params.toString()}`;
 }
 window.goToBinScriptPage = goToBinScriptPage;
 
