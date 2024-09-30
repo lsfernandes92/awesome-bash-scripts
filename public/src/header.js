@@ -1,4 +1,4 @@
-export const prependHeaderToPage = () => {
+export const prependHeaderToPage = (page = "index") => {
   const navbarElement = document.createElement("div")
   const navbarCenterElement = document.createElement("div")
   const btnGhostElement = document.createElement("a")
@@ -8,7 +8,7 @@ export const prependHeaderToPage = () => {
   navbarElement.classList.add("navbar", "bg-base-100")
   navbarCenterElement.classList.add("navbar-center")
   btnGhostElement.classList.add("btn", "btn-ghost", "text-xl")
-  logoImgElement.src = "/images/logo.png"
+  logoImgElement.src = page === "index" ? "images/logo.png" : "../images/logo.png"
   logoImgElement.alt = "Awesome bash scripts logo"
   awesomeBashScriptsParagraphElement.textContent = "Awesome Bash Scripts"
 

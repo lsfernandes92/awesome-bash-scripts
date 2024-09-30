@@ -18,7 +18,7 @@ binCategoryElement.innerHTML = category
 const showScriptContent = (binName) => {
   const scriptContent = document.querySelector(".language-ruby")
 
-  fetch(`/bins/${binName}`)
+  fetch(`../bins/${binName}`)
     .then(response => response.text())
     .then(data => {
       scriptContent.innerHTML = "\n" + data
@@ -27,5 +27,5 @@ const showScriptContent = (binName) => {
     .catch(error => console.error("Error fetching the file:", error))
 }
 
-prependHeaderToPage()
+prependHeaderToPage("details")
 showScriptContent(q)
