@@ -18,7 +18,7 @@ binCategoryElement.innerHTML = category
 const showScriptContent = (binName) => {
   const scriptContent = document.querySelector(".language-ruby")
 
-  fetch(`../public/bins/${binName}`)
+  fetch(`/bins/${binName}`)
     .then(response => response.text())
     .then(data => {
       scriptContent.innerHTML = "\n" + data
