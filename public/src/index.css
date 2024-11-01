@@ -1,3 +1,27 @@
+/* 
+Global vars
+*/
+:root {
+  --main-font: "Jersey10", sans-serif;
+  --link-font: "Jersey10Charted", sans-serif;
+  --main-font-color: #D9D9D9;
+}
+
+/* 
+App fonts
+*/
+@font-face {
+  font-family: "Jersey10";
+  src: local("Jersey 10"), local("Jersey10"), url("./assets/fonts/Jersey10-Regular.ttf");
+}
+@font-face {
+  font-family: "Jersey10Charted";
+  src: local("Jersey 10 Charted"), local("Jersey10Charted"), url("./assets/fonts/Jersey10Charted-Regular.ttf");
+}
+
+/* 
+App container
+*/
 .container {
   display: flex;
   flex-direction: column;
@@ -6,6 +30,9 @@
   min-height: 100vh;
 }
 
+/* 
+Navbar
+*/
 .container navbar {
   display: flex;
   justify-content: space-between;
@@ -14,8 +41,8 @@
 
 .navbar-logo {
   font-size: 24px;
-  font-family: "Jersey 10 Charted", sans-serif;
-  color: #D9D9D9;
+  font-family: var(--link-font);
+  color: var(--main-font-color);
 }
 
 .navbar-logo:hover {
@@ -24,14 +51,17 @@
 
 .navbar-link {
   font-size: 24px;
-  font-family: "Jersey 10 Charted", sans-serif;
-  color: #D9D9D9;
+  font-family: var(--link-font);
+  color: var(--main-font-color);
 }
 
 .navbar-link:hover {
   color: white;
 }
 
+/* 
+Main container
+*/
 .main-container h1, p {
   display: flex;
   justify-content: center;
@@ -39,7 +69,7 @@
 
 .main-container h1 {
   font-size: 55px;
-  font-family: "Jersey 10", sans-serif;
+  font-family: var(--main-font);
   font-weight: 400;
   font-style: normal;
   margin: 1em 0;
@@ -48,13 +78,16 @@
 
 .main-container p {
   font-size: 16px;
-  font-family: "Jersey 10", sans-serif;
+  font-family: var(--main-font);
   font-weight: 100;
   font-style: normal;
   margin-bottom: 3px;
-  color: #D9D9D9;
+  color: var(--main-font-color);
 }
 
+/* 
+Categories tags
+*/
 .main-container-categories {
   display: flex;
   justify-content: space-between;
@@ -63,12 +96,15 @@
 
 .category-item {
   font-size: 24px;
-  font-family: "Jersey 10", sans-serif;
+  font-family: var(--main-font);
   font-weight: 100;
   border-radius: 1px;
   padding: 15px 15px;
 }
 
+/* 
+Bins container
+*/
 .bins-container {
   display: flex;
   flex-wrap: wrap;
@@ -84,12 +120,12 @@
 
 .bin-card pre, code {
   font-size: 24px;
-  font-family: "Jersey 10", sans-serif;
+  font-family: var(--main-font);
   font-style: oblique;
 }
 
 .bin-name {
-  font-family: "Jersey 10 Charted", sans-serif;
+  font-family: var(--link-font);
   font-style: normal;
 }
 
@@ -97,6 +133,9 @@
   color: white;
 }
 
+/* 
+Footer
+*/
 .container footer {
   display: flex;
   flex-direction: column;
@@ -106,8 +145,8 @@
 
 .footer-link {
   font-size: 16px;
-  font-family: "Jersey 10 Charted", sans-serif;
-  color: #D9D9D9;
+  font-family: var(--link-font);
+  color: var(--main-font-color);
 }
 
 .footer-link:hover {
@@ -116,12 +155,12 @@
 
 footer p {
   font-size: 16px;
-  font-family: "Jersey 10", sans-serif;
-  color: #D9D9D9;
+  font-family: var(--main-font);
+  color: var(--main-font-color);
 }
 
 footer .me {
-  font-family: "Jersey 10 Charted", sans-serif;
+  font-family: var(--link-font);
 }
 
 footer .me:hover {
@@ -130,7 +169,7 @@ footer .me:hover {
 
 footer h3 {
   font-size: 13px;
-  font-family: "Jersey 10", sans-serif;
+  font-family: var(--main-font);
   color: gray
 }
 
