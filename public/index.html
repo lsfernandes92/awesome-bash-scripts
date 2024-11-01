@@ -5,25 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="images/terminal-solid.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+10+Charted&family=Jersey+25+Charted&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <title>Awesome Bash Scripts</title>
-  <script src="src/main.js" type="module" defer></script>
-  <link rel="stylesheet" href="src/main.css">
-  <link rel="stylesheet" href="src/index_page.css">
+  <script src="src/index.js" type="module" defer></script>
+  <link rel="stylesheet" href="src/index.css">
 </head>
 <body>
-  <main class="container">
-    <section class="container__category_section">
-      <div class="container__category_section-wrapper">
-        <a href="#" name="All" class="superior__item badge badge-outline" style="color: #FFBE00">All</a>
-        <a href="#" name="Utils" class="superior__item badge badge-neutral badge-outline">Utils</a>
-        <a href="#" name="Productivity" class="superior__item badge badge-neutral badge-outline">Productivity</a>
-        <a href="#" name="Useless" class="superior__item badge badge-neutral badge-outline">Useless</a>
+  <div class="container">
+    <navbar>      
+      <a href="index.html" class="navbar-logo">HOME</a>
+      <div class="navbar-links">
+        <a href="https://github.com/lsfernandes92/awesome-bash-scripts" target="_blank" class="navbar-link">GITHUB</a>
+        <a href="https://ko-fi.com/variosonrails" target="_blank" class="navbar-link">SUPPORT ME</a>
       </div>
-    </section>
-  
-    <section class="container__bins_section">
-      <ul class="container__bins_section-wrapper"></ul>
-    </section>
-  </main>
+    </navbar>
+
+    <main class="main-container">
+      <h1>>_ Awesome Bash Scripts</h1>
+      <p>Filter by category</p>
+      <div class="main-container-categories">
+        <a href="#" name="All" class="category-item badge badge-outline" style="color: #FFBE00">All</a>
+        <a href="#" name="Utils" class="category-item badge badge-neutral badge-outline">Utils</a>
+        <a href="#" name="Productivity" class="category-item badge badge-neutral badge-outline">Productivity</a>
+        <a href="#" name="Useless" class="category-item badge badge-neutral badge-outline">Useless</a>
+      </div>
+      
+      <ul class="bins-container"></ul>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">HOME</a>
+        <a href="https://github.com/lsfernandes92/awesome-bash-scripts" target="_blank" class="footer-link">GITHUB</a>
+        <a href="https://ko-fi.com/variosonrails" target="_blank" class="footer-link">SUPPORT ME</a>
+      </div>
+      <p>
+        Made with <span style="color: red; margin: 0 3px;" class="footer-heart"><3</span> by 
+        <a href="https://lsfernandes92.github.io/portifolio/" target="_blank" style="margin: 0 3px" class="me">
+          LUCAS FERNANDES
+        </a>
+      </p>
+      <h3>©Awesome Bash Scripts 2024. All Rights Reserved.</h3>
+    </footer>
+  </div>
 </body>
 </html>

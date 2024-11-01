@@ -1,5 +1,3 @@
-import { prependHeaderToPage } from './header.js';
-
 const binsJson = [
   {
     "name": "add-bins",
@@ -17,8 +15,8 @@ const binsJson = [
     "category": "productivity"
   }
 ]
-const binsContainer = document.querySelector(".container__bins_section-wrapper")
-const categoriesElements = document.querySelectorAll(".superior__item")
+const binsContainer = document.querySelector(".bins-container")
+const categoriesElements = document.querySelectorAll(".category-item")
 
 export const goToBinScriptPage = (binObject) => {
   const bin = JSON.parse(decodeURIComponent(binObject));
@@ -37,11 +35,11 @@ const listBins = () => {
     const serializedObj = encodeURIComponent(JSON.stringify(obj));
 
     binsContainer.innerHTML += `
-      <li class="bins__item mockup-code flex flex-row">
-        <div class="binary-card p-8">
-          <pre data-prefix="$"><code class="binary-name ${obj.name}"><a href="#" name="${obj.name}" onclick="goToBinScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
-          <pre data-prefix=">" class="text-success"><code class="binary-description">${obj.description}</code></pre>
-          <pre data-prefix=">" class="text-warning"><code class="binary-category">${obj.category}</code></pre>
+      <li class="bin-item mockup-code">
+        <div class="bin-card p-8">
+          <pre data-prefix="$"><code class="bin-name ${obj.name}"><a href="#" name="${obj.name}" onclick="goToBinScriptPage('${serializedObj}')">./${obj.name}</a></code></pre>
+          <pre data-prefix=">" class="text-success"><code class="bin-description">${obj.description}</code></pre>
+          <pre data-prefix=">" class="text-warning"><code class="bin-category">${obj.category}</code></pre>
         </div>
       </li>
     `
@@ -55,10 +53,10 @@ categoriesElements.forEach(element => {
 })
 
 const filterByCategory = (category) => {
-  const bins = document.querySelectorAll(".bins__item")
+  const bins = document.querySelectorAll(".bin-item")
 
   bins.forEach(element => {
-    const binCategory = element.querySelector(".binary-category").textContent.toLowerCase()
+    const binCategory = element.querySelector(".bin-category").textContent.toLowerCase()
 
     element.style.display = category.includes(binCategory) || category == "all" ? "block" : "none"
 
@@ -67,7 +65,7 @@ const filterByCategory = (category) => {
 }
 
 const highlightCategoryElement = (categoryToHighlight) => {
-  const categories = document.querySelectorAll(".superior__item")
+  const categories = document.querySelectorAll(".category-item")
 
   categories.forEach(element => {
     unhighlightElement(element)
@@ -92,5 +90,4 @@ const unhighlightElement = (category) => {
   category.style.removeProperty("color")
 }
 
-prependHeaderToPage()
 listBins()
