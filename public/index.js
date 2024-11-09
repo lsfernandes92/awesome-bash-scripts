@@ -1,3 +1,5 @@
+import { appendFooterToContainer } from "./footer.js"
+
 const binsJson = [
   {
     "name": "add-bins",
@@ -19,20 +21,20 @@ const binsContainer = document.querySelector(".bins-container")
 const categoriesElements = document.querySelectorAll(".category-item")
 
 export const goToBinScriptPage = (binObject) => {
-  const bin = JSON.parse(decodeURIComponent(binObject));
+  const bin = JSON.parse(decodeURIComponent(binObject))
   
   const params = new URLSearchParams({
      q: bin.name,
      description: bin.description,
      category: bin.category
-  });
-  window.location.href = `src/details_page.html?${params.toString()}`;
+  })
+  window.location.href = `./show.html?${params.toString()}`
 }
-window.goToBinScriptPage = goToBinScriptPage;
+window.goToBinScriptPage = goToBinScriptPage
 
 const listBins = () => {
   binsJson.forEach(obj => {
-    const serializedObj = encodeURIComponent(JSON.stringify(obj));
+    const serializedObj = encodeURIComponent(JSON.stringify(obj))
 
     binsContainer.innerHTML += `
       <li class="bin-item mockup-code">
@@ -61,7 +63,7 @@ const filterByCategory = (category) => {
     element.style.display = category.includes(binCategory) || category == "all" ? "block" : "none"
 
     highlightCategoryElement(category)
-  });
+  })
 }
 
 const highlightCategoryElement = (categoryToHighlight) => {
@@ -91,3 +93,4 @@ const unhighlightElement = (category) => {
 }
 
 listBins()
+appendFooterToContainer()

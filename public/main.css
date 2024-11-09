@@ -1,0 +1,61 @@
+/* 
+Footer
+*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 4em 0; */
+}
+
+.footer-link {
+  margin: 0 2px;
+  font-size: 16px;
+  font-family: var(--link-font);
+  color: var(--main-font-color);
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+footer p {
+  font-size: 16px;
+  font-family: var(--main-font);
+  color: var(--main-font-color);
+}
+
+.me {
+  font-family: var(--link-font);
+  margin: 0 3px
+}
+
+.me:hover {
+  color: white;
+}
+
+footer h3 {
+  font-size: 13px;
+  font-family: var(--main-font);
+  color: gray;
+}
+
+.footer-heart {
+  color: red;
+  margin: 0 3px;
+  padding: 0 3px;
+  animation: heartbeat 0.9s infinite;
+  cursor: none;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}

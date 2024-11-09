@@ -20,7 +20,7 @@ App fonts
 }
 
 /* 
-App container
+Page container
 */
 .container {
   display: flex;
@@ -33,7 +33,7 @@ App container
 /* 
 Navbar
 */
-.container navbar {
+navbar {
   display: flex;
   justify-content: space-between;
   padding-top: 1em;
@@ -110,6 +110,7 @@ Bins container
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 100vh;
+  margin-bottom: 4em;
 }
 
 .bins-container li {
@@ -131,63 +132,4 @@ Bins container
 
 .bin-name:hover {
   color: white;
-}
-
-/* 
-Footer
-*/
-.container footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4em 0;
-}
-
-.footer-link {
-  font-size: 16px;
-  font-family: var(--link-font);
-  color: var(--main-font-color);
-}
-
-.footer-link:hover {
-  color: white;
-}
-
-footer p {
-  font-size: 16px;
-  font-family: var(--main-font);
-  color: var(--main-font-color);
-}
-
-footer .me {
-  font-family: var(--link-font);
-}
-
-footer .me:hover {
-  color: white;
-}
-
-footer h3 {
-  font-size: 13px;
-  font-family: var(--main-font);
-  color: gray
-}
-
-.footer-heart:hover {
-  transform: translateY(-20%);
-  transition: transform 0.9s;
-  animation: heartbeat 0.5s infinite;
-  cursor: none;
-}
-
-@keyframes heartbeat {
-  0% {
-    transform: scale(1.3);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1.3);
-  }
 }

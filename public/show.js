@@ -1,3 +1,5 @@
+import { appendFooterToContainer } from "./footer.js"
+
 const params = new URLSearchParams(window.location.search)
 const q = params.get("q")
 const description = params.get("description")
@@ -36,7 +38,7 @@ copyButton.addEventListener("click", () => copyToClipboard())
 const showScriptContent = (binName) => {
   const scriptContent = document.querySelector(".language-ruby")
 
-  fetch(`../bins/${binName}`)
+  fetch(`./bins/${binName}`)
     .then(response => response.text())
     .then(data => {
       scriptContent.innerHTML = data
@@ -46,3 +48,4 @@ const showScriptContent = (binName) => {
 }
 
 showScriptContent(q)
+appendFooterToContainer()
