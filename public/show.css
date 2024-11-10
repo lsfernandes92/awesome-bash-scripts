@@ -30,35 +30,6 @@ Page container
   margin: 0 auto;
 }
 
-/* 
-Navbar
-*/
-navbar {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1em;
-}
-
-.navbar-logo {
-  font-size: 24px;
-  font-family: var(--link-font);
-  color: var(--main-font-color);
-}
-
-.navbar-logo:hover {
-  color: white;
-}
-
-.navbar-link {
-  font-size: 24px;
-  font-family: var(--link-font);
-  color: var(--main-font-color);
-}
-
-.navbar-link:hover {
-  color: white;
-}
-
 /*
 Main container
 */

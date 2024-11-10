@@ -1,4 +1,5 @@
 import { appendFooterToContainer } from "./footer.js"
+import { prependNavbarToContainer } from "./navbar.js"
 
 const binsJson = [
   {
@@ -93,4 +94,5 @@ const unhighlightElement = (category) => {
 }
 
 listBins()
+prependNavbarToContainer()
 appendFooterToContainer()

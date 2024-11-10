@@ -55,7 +55,7 @@ const links = () => {
   links.appendChild(githubLink)
   links.appendChild(kofiLink)
 
-  return links;
+  return links
 }
 
 const paragraph = () => {
@@ -76,7 +76,7 @@ const paragraph = () => {
   paragraph.innerHTML += "by"
   paragraph.appendChild(portifolioLink)
 
-  return paragraph;
+  return paragraph
 }
 
 const trademark = () => {
@@ -84,5 +84,5 @@ const trademark = () => {
 
   trademark.textContent = "©Awesome Bash Scripts 2024. All Rights Reserved."
 
-  return trademark;
+  return trademark
 }

@@ -1,4 +1,5 @@
 import { appendFooterToContainer } from "./footer.js"
+import { prependNavbarToContainer } from "./navbar.js"
 
 const params = new URLSearchParams(window.location.search)
 const q = params.get("q")
@@ -23,15 +24,13 @@ const copyToClipboard = () => {
   const textToCopy = scriptContent.textContent
 
   navigator.clipboard.writeText(textToCopy)
-  .then(() => {
+    .then(() => {
       copiedToolTip.style.display = "block"
       setTimeout(() => {
         copiedToolTip.style.display = "none"
       }, 2000)
     })
-    .catch(err => {
-      console.error('Error in copying text: ', err)
-    })
+    .catch(error => console.error('Error in copying text: ', error))
 }
 copyButton.addEventListener("click", () => copyToClipboard())
 
@@ -47,5 +46,6 @@ const showScriptContent = (binName) => {
     .catch(error => console.error("Error fetching the file:", error))
 }
 
-showScriptContent(q)
+prependNavbarToContainer()
 appendFooterToContainer()
+showScriptContent(q)
