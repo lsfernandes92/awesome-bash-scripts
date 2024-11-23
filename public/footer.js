@@ -15,7 +15,7 @@
 //      LUCAS FERNANDES
 //    </a>
 //  </p>
-//  <h3>©Awesome Bash Scripts 2024. All Rights Reserved.</h3>
+//  <h3>©Awesome Scripts 2024. All Rights Reserved.</h3>
 //</footer>
 export const appendFooterToContainer = () => {
   
@@ -82,7 +82,7 @@ const paragraph = () => {
 const trademark = () => {
   const trademark = document.createElement("h3")
 
-  trademark.textContent = "©Awesome Bash Scripts 2024. All Rights Reserved."
+  trademark.textContent = "©Awesome Scripts 2024. All Rights Reserved."
 
   return trademark
 }

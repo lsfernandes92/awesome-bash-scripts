@@ -1,4 +1,4 @@
-# awesome-bash-scripts
+# awesome-scripts
 
 ## Themes
 Themes from highlight.js that currently complement the existing design are:
