@@ -6,7 +6,7 @@
 //<navbar>      
 //  <a href="./index.html" class="navbar-logo">HOME</a>
 //  <div class="navbar-links">
-//    <a href="https://github.com/lsfernandes92/awesome-bash-scripts" target="_blank" class="navbar-link">GITHUB</a>
+//    <a href="https://github.com/lsfernandes92/awesome-scripts" target="_blank" class="navbar-link">GITHUB</a>
 //    <a href="https://ko-fi.com/variosonrails" target="_blank" class="navbar-link">SUPPORT ME</a>
 //  </div>
 //</navbar>
@@ -37,7 +37,7 @@ const links = () => {
 
   links.classList.add("navbar-links")
   
-  githubLink.href = "https://github.com/lsfernandes92/awesome-bash-scripts"
+  githubLink.href = "https://github.com/lsfernandes92/awesome-scripts"
   githubLink.target = "_blank"
   githubLink.classList.add("navbar-link")
   githubLink.textContent = "GITHUB"

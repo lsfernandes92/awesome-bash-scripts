@@ -6,7 +6,7 @@
 //<footer>
 //  <div class="footer-links">
 //    <a href="../index.html" class="footer-link">HOME</a>
-//    <a href="https://github.com/lsfernandes92/awesome-bash-scripts" target="_blank" class="footer-link">GITHUB</a>
+//    <a href="https://github.com/lsfernandes92/awesome-scripts" target="_blank" class="footer-link">GITHUB</a>
 //    <a href="https://ko-fi.com/variosonrails" target="_blank" class="footer-link">SUPPORT ME</a>
 //  </div>
 //  <p>
@@ -41,7 +41,7 @@ const links = () => {
   homeLink.classList.add("footer-link")
   homeLink.textContent = "HOME"
 
-  githubLink.href = "https://github.com/lsfernandes92/awesome-bash-scripts"
+  githubLink.href = "https://github.com/lsfernandes92/awesome-scripts"
   githubLink.target = "_blank"
   githubLink.classList.add("footer-link")
   githubLink.textContent = "GITHUB"
